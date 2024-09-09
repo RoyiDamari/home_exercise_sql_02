@@ -104,6 +104,7 @@ where sd.song_length_seconds > avg_song_length;
 select ew.song_name, sd.song_length_seconds
 from eurovision_winners ew
 join song_details sd on ew.year = sd.year
+where sd.song_length_seconds
 order by sd.song_length_seconds limit 1;
 
 # 19
