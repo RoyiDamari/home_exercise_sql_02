@@ -49,14 +49,14 @@ from song_details
 where solo_performance = FALSE;
 
 # 11
-# without the length song
+# without the song length
 select ew.song_name
 from eurovision_winners ew
 join song_details sd on ew.year = sd.year
 where sd.song_length_seconds = (select max(song_length_seconds)
 				from song_details);
 
-# with the length song
+# with the song length
 select ew.song_name, max(sd.song_length_seconds) as max_song_length
 from eurovision_winners ew
 join song_details sd on ew.year = sd.year;
